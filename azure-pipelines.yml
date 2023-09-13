@@ -24,3 +24,9 @@ steps:
 
 - script: composer install --no-interaction --prefer-dist
   displayName: 'composer install'
+- task: CopyFiles@2
+  displayName: 'Copy source code to /var/www/'
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'  # Change this to the source code location if necessary
+    Contents: '**'  # Copy all files and folders
+    TargetFolder: '/var/www/'
