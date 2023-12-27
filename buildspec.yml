@@ -1,0 +1,11 @@
+version: 0.0
+
+phases:
+  build:
+    commands:
+      - echo "Installing dependencies"
+      - composer install 
+      - echo "Clearing cache"
+      - php artisan cache:clear
+
+
